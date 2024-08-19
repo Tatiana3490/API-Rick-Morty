@@ -25,7 +25,7 @@ async function getCharacters (name, status){
     return data.results;
 }
 
-//La función que va a renderizar los elementos dentro del DOM
+//La función que va a representar los personajes:
 
 async function displayCharacters(name, status) {
 
@@ -34,7 +34,7 @@ async function displayCharacters(name, status) {
 
     charactersEl.innerHTML ='';
 
-    //renderizar los personajes
+    //Representar los personajes
     for(let character of characters){
         const card = document.createElement('div');
         card.classList.add('character-card');
@@ -45,10 +45,7 @@ async function displayCharacters(name, status) {
             <p> <b>Status:</b> <i>${character.status}</i> </p>
             <p> <b>Especie:</b> <i>${character.species}</i> </p>
             <p> <b>Localización:</b> <i>${character.location.name}</i> </p>
-            <p> <b>Género:</b> <i>${character.gender}</i></p>
-            <p> <b>Origen:</b><i> ${character.origin.name}</i> </p>
-        
-        
+                   
         `;
 
         //Para redirigir a la página de detalle

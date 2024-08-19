@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const characterId = params.get('id'); // Usa 'id' si estás pasando el ID en la URL
+    const characterId = params.get('id'); 
     const detailContainer = document.getElementById('personaje-detail');
 
     if (characterId) {
@@ -16,17 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p><b>Especie:</b> ${character.species}</p>
                         <p><b>Género:</b> ${character.gender}</p>
                         <p><b>Origen:</b> ${character.origin.name}</p>
-                        <p><b>Localización:</b> ${character.location.name}</p>
-                                                
+                        <p><b>Localización:</b> ${character.location.name}</p>   
+                                         
                         </div>
                         
                 `;
+         
             })
             .catch(error => {
                 detailContainer.innerHTML = `<p>Error al cargar los detalles del personaje.</p>`;
-                console.error('Error fetching character details:', error);
+                console.error('Error al obtener los detalles de los personajes:', error);
             });
     } else {
-        detailContainer.innerHTML = `<p>No character ID provided.</p>`;
+        detailContainer.innerHTML = `<p>No se ha proporcionado ningún ID de personaje.</p>`;
     }
 });
