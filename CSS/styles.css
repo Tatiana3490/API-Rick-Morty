@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+/* Estilos globales */
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Estilos del header */
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del botón de volver */
+header a {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    background-color: #3e8e41;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+header a:hover {
+    background-color: #45a049;
+}
+
+/* Estilos del contenedor de detalle del personaje */
+#character-detail {
+    text-align: center;
+}
+
+#character-detail .character-info p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+
+#character-detail h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
+#character-detail img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#character-detail p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+#character-detail ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#character-detail ul li {
+    background-color: #f9f9f9;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+
+/* Estilo de la lista de episodios */
+#character-detail ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: left; /* Centra el texto dentro de los elementos de la lista */
+}
+
+#character-detail ul li {
+    background-color: #f9f9f9;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center; /* Centra el texto dentro de cada elemento de la lista */
+}
+
+
+h1, #filters{
+    text-align: center;
+}
+
+#filters input, #filters #status-filter {
+    padding: 8px 16px;
+    margin: 10px;
+    border: 0;
+    font-size: 18px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+
+.container{
+    width: 80%;
+    display:flex;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+#characters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.character-card {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.character-card img{
+    width: 100%;
+}

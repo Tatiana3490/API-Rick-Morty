@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Personaje</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/detail.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Detalle del Personaje</h1>
+        <a href="index.html">Volver</a>
+    </header>
+    <!-- Detalles del personaje -->
+    <main id="character-detail"></main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const characterId = params.get('id');
+            const detailContainer = document.getElementById('character-detail');
+
+            if (!characterId) {
+                detailContainer.innerHTML = '<p>ID del personaje no proporcionado.</p>';
+                return;
+            }
+
+            fetch(`https://rickandmortyapi.com/api/character/${characterId}`)
+                .then(response => response.json())
+                .then(character => {
+                    detailContainer.innerHTML = `
+                        <h2>${character.name}</h2>
+                        <img src="${character.image}" alt="${character.name}">
+                        <p><b>Id:</b> ${character.id}</p>
+                        <p><b>Estado:</b> ${character.status}</p>
+                        <p><b>Especie:</b> ${character.species}</p>
+                        <p><b>Género:</b> ${character.gender}</p>
+                        <p><b>Origen:</b> ${character.origin.name}</p>
+                        <p><b>Localización:</b> ${character.location.name}</p>
+                                                
+                    `;
+                })
+                .catch(error => {
+                    detailContainer.innerHTML = '<p>Error al cargar los detalles del personaje. Inténtalo de nuevo más tarde.</p>';
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>
